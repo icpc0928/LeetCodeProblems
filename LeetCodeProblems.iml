@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/6_ZigZagConversion" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/11_ContainerWithMostWater" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/17_LetterCombinationsOfAPhoneNumber" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/1_TwoSum" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/3_LongestSubStringWithoutRepeatingCharacters" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/4_MedianOfTwoSortedArrays" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/21_MergeTwoSortedLists" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/26_RemoveDuplicatesFromSortedArray" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/37_SudokuSolver" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/27_RemoveElement" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/35_SearchInsertPosition" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/58_LengthOfLastWord" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/20_ValidParentheses" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/1_100Problems" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
