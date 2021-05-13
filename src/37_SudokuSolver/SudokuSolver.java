@@ -14,7 +14,28 @@ public class SudokuSolver {
                 {".","6",".", ".",".",".", "2","8","."},
                 {".",".",".", "4","1","9", ".",".","5"},
                 {".",".",".", ".","8",".", ".","7","9"},
+//                {".",".","9","7","4","8",".",".","."},
+//                {"7",".",".",".",".",".",".",".","."},
+//                {".","2",".","1",".","9",".",".","."},
+//                {".",".","7",".",".",".","2","4","."},
+//                {".","6","4",".","1",".","5","9","."},
+//                {".","9","8",".",".",".","3",".","."},
+//                {".",".",".","8",".","3",".","2","."},
+//                {".",".",".",".",".",".",".",".","6"},
+//                {".",".",".","2","7","5","9",".","."},
         };
+
+//        {".",".","9","7","4","8",".",".","."},
+//        {"7",".",".",".",".",".",".",".","."},
+//        {".","2",".","1",".","9",".",".","."},
+//        {".",".","7",".",".",".","2","4","."},
+//        {".","6","4",".","1",".","5","9","."},
+//        {".","9","8",".",".",".","3",".","."},
+//        {".",".",".","8",".","3",".","2","."},
+//        {".",".",".",".",".",".",".",".","6"},
+//        {".",".",".","2","7","5","9",".","."},
+
+
         char[][] board = new char[stringBoard.length][stringBoard[0].length];
 
         //String to Char
@@ -56,60 +77,63 @@ public class SudokuSolver {
                     canChange[i][j] = board[i][j] == '.';
                 }
             }
+            //開始:
+            int[] pos = new int[2];
+//            forwardBank(pos, true, canChange);
+            do{
+                sudokuSolver(board, pos, canChange, true);
+            }while (!flag);
 
-            sudokuSolver(board, 0,0, canChange, true);
         }
 
         public boolean flag = false;
 
-        public void sudokuSolver(char[][] board, int i, int j, boolean[][] canChange, boolean fb){
+        public void sudokuSolver(char[][] board, int[] pos, boolean[][] canChange, boolean fb){
             //算完惹
-            if(i == 9){
+            if(pos[0] == 9){
                 flag = true;
                 return;
             }
-            int[] next = new int[2];
 
+            System.out.println("i: " + pos[0] + ", j: " + pos[1] + "  ");
 
             //如該格還沒被做過
-            if(board[i][j] == '.'){
+            if(board[pos[0]][pos[1]] == '.'){
+//                System.out.println("DO 1");
                 for(int po = 1; po <= 9; po++){
                     //如果該值吻合
-                    if(isGood(board, i, j, (po+"").charAt(0))){
-                        board[i][j] = (po + "").charAt(0);
+                    if(isGood(board, pos[0], pos[1], (po+"").charAt(0))){
+                        board[pos[0]][pos[1]] = (po + "").charAt(0);
                         //下一格
-                        next = forwardBank(i, j, true);
-                        sudokuSolver(board, next[0], next[1], canChange, fb);
+                        forwardBack(pos , true, canChange);
+                        return;
                     }
                 }
-                //1-9都不能裝,則開始退位 TODO
-
-
+                //1-9都不能裝,則開始退位
+                forwardBack(pos, false, canChange);
+                System.out.println("Hello");
 
             }
             //如果這格可以做,且曾經被做過 則迴圈使用 目前數字+1 到 9 去跑
-            else if(canChange[i][j]){
-                //TODO
-//                sudokuSolver(board, ni, nj, canChange, fb);
-                for(int po = Integer.parseInt(String.valueOf(board[i][j])) + 1; po <= 9; po++){
+            else if(canChange[pos[0]][pos[1]]){
+//                System.out.println("DO 2");
+                for(int po = Integer.parseInt(String.valueOf(board[pos[0]][pos[1]])) + 1; po <= 9; po++){
                     //如果該值吻合
-                    if(isGood(board, i, j, (po+"").charAt(0))){
-                        board[i][j] = (po + "").charAt(0);
+                    if(isGood(board, pos[0], pos[1], (po+"").charAt(0))){
+                        board[pos[0]][pos[1]] = (po + "").charAt(0);
                         //下一格
-                        next = forwardBank(i, j, true);
-                        sudokuSolver(board, next[0], next[1], canChange, fb);
+                        forwardBack(pos, true, canChange);
+                        return ;
                     }
                 }
-                //X-9都不能裝,則開始退位 TODO
+                //X-9都不能裝,則開始退位 且該格清空為'.'
+                board[pos[0]][pos[1]] = '.';
+                forwardBack(pos, false, canChange);
             }
-            //如果這格不能做則繼續往 上 / 下 跑
+            //僅供第一格如果是已知的數字
             else{
-                //TODO 上 / 下 一格
-                next = forwardBank(i, j, fb);
-                sudokuSolver(board, next[0], next[1], canChange, fb);
+                forwardBack(pos, true, canChange);
             }
-
-
         }
 
         public boolean isGood(char[][] board, int r , int c , char val){
@@ -129,44 +153,40 @@ public class SudokuSolver {
             return true;
         }
 
-        public int[] forwardBank(int ni, int nj, boolean fw){
+        public void forwardBack(int[] pos, boolean fw, boolean[][] canChange){
+            System.out.println("POS: " + pos[0] + ", " + pos[1] + " fw: " + fw);
+            do {
+                //前進
+                if(fw){
+                    //換行
+                    if(pos[1] == 8){
+                        pos[0]++;
+                        pos[1] = 0;
 
-            int[] array = new int[2];
+                    }
+                    //換下一格
+                    else{
+                        pos[1]++;
 
-            //前進
-            if(fw){
-                //換行
-                if(nj == 8){
-                    array[0] = ni + 1;
-                    array[1] = 0;
+                    }
                 }
-                //換下一格
+                //後退
                 else{
-                    array[0] = ni;
-                    array[1] = nj + 1;
-                }
-            }
-            //後退
-            else{
-                //換行
-                if(nj == 0){
-                    array[0] = ni - 1;
-                    array[1] = 8;
-                }
-                //換上一格
-                else{
-                    array[0] = ni;
-                    array[1] = nj - 1;
+                    //換行
+                    if(pos[1] == 0){
+                        pos[1] = 8;
+                        pos[0]--;
+                    }
+                    //換上一格
+                    else{
+                        pos[1]--;
+                    }
                 }
 
-            }
-
-            return array;
+                if(pos[0] == 9){
+                    break;
+                }
+            }while (!canChange[pos[0]][pos[1]]);
         }
-
-
-
-
-
     }
 }
