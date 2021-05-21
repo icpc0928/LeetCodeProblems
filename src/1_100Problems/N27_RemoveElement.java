@@ -1,4 +1,4 @@
-public class RemoveElement {
+public class N27_RemoveElement {
 
     public static void main(String[] args){
 

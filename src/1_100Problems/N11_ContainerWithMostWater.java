@@ -1,4 +1,4 @@
-public class ContainerWithMostWater {
+public class N11_ContainerWithMostWater {
     public static void main(String[] args){
         int area;
         int[] height ={1,2,3,4,5,6,};

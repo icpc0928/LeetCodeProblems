@@ -1,4 +1,4 @@
-public class SudokuSolver {
+public class N37_SudokuSolver {
     //暴力解法,一切從頭 平均 25 ms 記憶體38.5mb 比10趴的人快 比19%的人使用更少的記憶體QQ
 
     public static void main(String[] args){

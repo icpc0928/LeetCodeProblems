@@ -1,4 +1,4 @@
-public class ValidParentheses {
+public class N20_ValidParentheses {
 
     public static void main(String[] args){
         String s ="{[]}";

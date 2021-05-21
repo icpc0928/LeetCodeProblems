@@ -1,4 +1,4 @@
-public class SearchInsertPosition {
+public class N35_SearchInsertPosition {
 
     public static void main(String[] args){
 

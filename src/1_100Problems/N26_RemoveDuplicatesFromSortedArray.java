@@ -2,7 +2,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class RemoveDuplicatesFromSortedArray {
+public class N26_RemoveDuplicatesFromSortedArray {
 
     public static void main(String[] args){
         Solution solution = new Solution();

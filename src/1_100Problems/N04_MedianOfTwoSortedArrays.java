@@ -1,6 +1,6 @@
 import sun.security.util.ArrayUtil;
 
-public class MedianOfTwoSortedArrays {
+public class N04_MedianOfTwoSortedArrays {
 
     public static void main(String[] args){
         Solution solution = new Solution();

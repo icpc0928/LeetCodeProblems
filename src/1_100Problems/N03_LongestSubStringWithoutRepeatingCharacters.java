@@ -1,4 +1,4 @@
-public class LongestSubStringWithoutRepeatingCharacters {
+public class N03_LongestSubStringWithoutRepeatingCharacters {
 
     public static void main(String[] args){
         String s = "pwwkew";

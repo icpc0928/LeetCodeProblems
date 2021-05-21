@@ -1,4 +1,4 @@
-public class LengthOfLastWord {
+public class N58_LengthOfLastWord {
 
     public static void main(String[] args){
         String s ="    ";

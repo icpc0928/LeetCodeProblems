@@ -1,4 +1,4 @@
-public class MergeTwoSortedLists {
+public class N21_MergeTwoSortedLists {
 
 
 
