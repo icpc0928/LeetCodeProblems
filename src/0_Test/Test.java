@@ -15,6 +15,7 @@ public class Test {
     }
     public static void test2(String... args){
         System.out.println(args.getClass() == String[].class);
+        
         for(String s : args){
             System.out.println(s);
         }
