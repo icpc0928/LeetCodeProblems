@@ -2,9 +2,25 @@ import java.util.Arrays;
 
 public class Test {
     public static void main(String[] args){
-        int[] arrays = {0,1,23,52,56,99,123};
+        test1(new String[] {"a", "b", "c","d"});
+        test2("a", "b", "c", "d");
 
-        int ans = Arrays.binarySearch(arrays, 124);
-        System.out.println(ans);
+    }
+
+    public static void test1(String[] args){
+        System.out.println(args.getClass() == String[].class);
+        for(String s : args){
+            System.out.println(s);
+        }
+    }
+    public static void test2(String... args){
+        System.out.println(args.getClass() == String[].class);
+        for(String s : args){
+            System.out.println(s);
+        }
+    }
+
+    public static void test3(Integer... hello){
+        String args[] = new String[3];
     }
 }
