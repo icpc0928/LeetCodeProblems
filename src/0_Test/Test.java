@@ -2,8 +2,10 @@ import java.util.Arrays;
 
 public class Test {
     public static void main(String[] args){
-        test1(new String[] {"a", "b", "c","d"});
-        test2("a", "b", "c", "d");
+
+        int[] a = {1,1,2,2,3,3,3,4,4,5,5,5,};
+        int b = Arrays.binarySearch(a, 0);
+        System.out.println(b);
 
     }
 
