@@ -1,4 +1,6 @@
 public class N42_TrappingRainWater {
+    //Runtime: 203 ms, faster than 5.01% of Java online submissions for Trapping Rain Water.
+    //Memory Usage: 38.4 MB, less than 68.14% of Java online submissions for Trapping Rain Water.
 
     public static void main(String[] args){
         int[] height = {4,2,0,3,2,5};
