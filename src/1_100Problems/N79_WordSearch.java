@@ -1,43 +1,50 @@
 public class N79_WordSearch {
+    //Runtime: 75 ms, faster than 65.42% of Java online submissions for Word Search.
+    //Memory Usage: 36.8 MB, less than 74.72% of Java online submissions for Word Search.
 
     public static void main(String[] args){
         Solution solution = new Solution();
         char[][] board = {
                 {'A','B','C','E'},
-                {'S','F','C','S'},
+                {'S','F','E','S'},
                 {'A','D','E','E'}
         };
-        String word = "ABCCED";
+        String word = "ABCESEEEFS";
         System.out.println(solution.exist(board, word));
     }
 
     static class Solution {
         public boolean exist(char[][] board, String word) {
 
-            boolean[][] isGone = new boolean[board.length][board[0].length];
-
-            for(int i = 0; i < board.length; i++){
+            for(int i = 0 ; i < board.length; i++){
                 for(int j = 0; j < board[i].length; j++){
-                    if(doTheMath(board, isGone, i, j, word, 0)){
-                        return true;
+                    if(word.charAt(0) == board[i][j]){
+                        //do DFS
+                        if(DFS(board, i, j, word, 0)) return true;
                     }
                 }
             }
             return false;
         }
-        //          上  下  右  左
-        int[] x = { 0,  0, 1, -1,};
-        int[] y = { 1, -1, 0,  0,};
 
+        public boolean DFS(char[][] board, int i, int j, String word, int charAt){
+            if(i < 0 || j < 0 || i >= board.length || j >= board[0].length || charAt >= word.length() || board[i][j] != word.charAt(charAt) ) return false;
+            System.out.println("check: " + i + " , " + j);
 
-        public boolean doTheMath(char[][] board, boolean[][] isGone, int i, int j, String word, int charAt){
-            char check = word.charAt(charAt);
-            if(board[i][j] == check){
-                //TODO
-
+            if(charAt == word.length() - 1){
+                return true;
             }
-            return false;
+            char t = board[i][j];
+            board[i][j] = ' ';
+            boolean found =
+                    DFS(board,  i, j + 1, word, charAt + 1) ||
+                    DFS(board,  i, j - 1, word, charAt + 1) ||
+                    DFS(board,  i + 1, j, word, charAt + 1) ||
+                    DFS(board,  i - 1, j, word, charAt + 1);
+            board[i][j] = t;    //走失敗的話不留痕跡 很重要!!
+            return found;
         }
+
 
     }
 
