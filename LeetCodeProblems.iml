@@ -22,7 +22,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/201_300Problems" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/301_400Problems" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/101_200Problems" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/401-500Problems" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/501_600Problems" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/601_700Problems" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/1801_1900Problems" isTestSource="false" />
@@ -31,6 +30,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src/1401_1500Problems" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/1701_1800Problems" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/2001_2100Problems" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/401_500Problems" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/701_800Problems" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/801_900Problems" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
