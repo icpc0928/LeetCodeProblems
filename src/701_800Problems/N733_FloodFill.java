@@ -1,5 +1,8 @@
 public class N733_FloodFill {
-
+    /**
+     * Runtime: 1 ms, faster than 85.30% of Java online submissions for Flood Fill.
+     * Memory Usage: 48.2 MB, less than 38.69% of Java online submissions for Flood Fill.
+     */
 
     public static void main(String[] args){
 
