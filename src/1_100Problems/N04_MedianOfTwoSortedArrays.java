@@ -1,4 +1,3 @@
-import sun.security.util.ArrayUtil;
 
 public class N04_MedianOfTwoSortedArrays {
 
