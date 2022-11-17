@@ -1,4 +1,6 @@
 public class N2319_CheckIfMatrixIsXMatrix {
+//Runtime: 12 ms, faster than 22.06% of Java online submissions for Check if Matrix Is X-Matrix.
+//Memory Usage: 54.7 MB, less than 15.66% of Java online submissions for Check if Matrix Is X-Matrix.
 
     public static void main(String[] args) {
         int[][] grid = {
