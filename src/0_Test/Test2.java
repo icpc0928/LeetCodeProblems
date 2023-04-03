@@ -6,13 +6,15 @@ public class Test2 {
 
     public static void main(String[] args){
 
-        String word = "abc";
-
-        String s = "abcabcabc";
-
-        String subStr = s.substring(s.length() - word.length());
-        System.out.println(subStr);
+        int check = 16;
+        System.out.println(factors2(check));
 
     }
 
+    private static int factors2(int checkNum){
+        while(checkNum % 2 == 0){
+            checkNum /= 2;
+        }
+        return checkNum;
+    }
 }
