@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Test3 {
@@ -5,8 +6,14 @@ public class Test3 {
 
     public static void main(String[] args){
 
-        int[] nums = new int[]{7,2,3,8,8,9,9,9,9,10,10,10,1,2,3,1,0,0,-1,-1,-1,-1,-1};
-        System.out.println(getResult(nums));
+        Date d = new Date();
+        var sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        var str = sdf.format(d);
+        System.out.println(str);
+
+
+//        int[] nums = new int[]{7,2,3,8,8,9,9,9,9,10,10,10,1,2,3,1,0,0,-1,-1,-1,-1,-1};
+//        System.out.println(getResult(nums));
     }
 
     private static List<Integer> getResult(int[] nums){
