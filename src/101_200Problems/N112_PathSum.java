@@ -22,8 +22,9 @@ public class N112_PathSum {
     public static void main(String[] args){
         Solution sol = new Solution();
         String str = "[5,4,8,11,null,13,4,7,2,null,null,null,1]";
+        Integer[] arr = TreeNodeMaker.strToIntArray(str);
         int target = 22;
-        TreeNode root = TreeNode.makeTree(str);
+        TreeNode root = TreeNodeMaker.arrayToTreeNodeWithoutUnnecessaryNull(arr);
         System.out.println(sol.hasPathSum(root, target));
     }
 
