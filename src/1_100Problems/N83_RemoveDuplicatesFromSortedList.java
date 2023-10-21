@@ -20,14 +20,14 @@ public class N83_RemoveDuplicatesFromSortedList {
     }
 
     //已經定義的
-    public static class ListNode{
-        int val;
-        ListNode next;
-        //建構式
-        ListNode(){}
-        ListNode(int val){
-            this.val = val;
-        }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
+//    public static class ListNode{
+//        int val;
+//        ListNode next;
+//        //建構式
+//        ListNode(){}
+//        ListNode(int val){
+//            this.val = val;
+//        }
+//        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+//    }
 }
