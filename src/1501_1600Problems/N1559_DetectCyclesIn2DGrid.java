@@ -29,31 +29,34 @@ public class N1559_DetectCyclesIn2DGrid {
             for(int i = 0; i < grid.length; i++){
                 for(int j = 0; j < grid[i].length; j++){
                     if(checkGrid[i][j] > 0) continue;
-                    List<Boolean> resultCheck = new ArrayList<>();
-                    DFS(grid, checkGrid, i, j, 1, resultCheck, grid[i][j]);
-                    if(resultCheck.size() > 0) return true;
+//                    List<Boolean> resultCheck = new ArrayList<>();
+                    if(DFS(grid, checkGrid, i, j, 1, grid[i][j])){
+                        return true;
+                    }
+//                    if(resultCheck.size() > 0) return true;
                 }
             }
             return false;
         }
 
-        public void DFS(char[][] grid, int[][] check, int i, int j, int count, List<Boolean> resultCheck, char checkChar){
-            if(i < 0 || i >= grid.length || j < 0 || j >= grid[i].length) return;   //超出界線
+        public boolean DFS(char[][] grid, int[][] check, int i, int j, int count, char checkChar){
+            if(i < 0 || i >= grid.length || j < 0 || j >= grid[i].length) return false;   //超出界線
             //不一樣的東西
-            if(checkChar != grid[i][j]) return;
+            if(checkChar != grid[i][j]) return false;
             //有循環
             if(check[i][j] > 0 && count - check[i][j] >= 3){
-                resultCheck.add(true);
+//                resultCheck.add(true);
+                return true;
             }
-            if(check[i][j] != 0) return;
+            if(check[i][j] != 0) return false;
 
             check[i][j] = count;
             count++;
 
-            DFS(grid, check, i+1, j, count, resultCheck, checkChar);
-            DFS(grid, check, i-1, j, count, resultCheck, checkChar);
-            DFS(grid, check, i, j+1, count, resultCheck, checkChar);
-            DFS(grid, check, i, j-1, count, resultCheck, checkChar);
+            return DFS(grid, check, i+1, j, count, checkChar)
+                    || DFS(grid, check, i-1, j, count, checkChar)
+                    || DFS(grid, check, i, j+1, count, checkChar)
+                    || DFS(grid, check, i, j-1, count, checkChar);
         }
 
 
