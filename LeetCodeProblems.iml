@@ -46,6 +46,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/2401_2500Problems" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/2501_2600Problems" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/2601_2700Problems" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/copilot/chatSessions" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
